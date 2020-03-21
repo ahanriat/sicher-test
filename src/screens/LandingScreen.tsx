@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, SafeAreaView } from "react-native";
+import { Image, SafeAreaView } from "react-native";
 import BaseText from "components/BaseText";
 import SecondaryText from "components/SecondaryText";
 import t from "services/translate";
