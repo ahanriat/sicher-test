@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import BookingDetailsScreen from "screens/BookingDetailsScreen";
 import ConfirmBookingScreen from "screens/ConfirmBookingScreen";
 import DiagnosisResultScreen from "screens/DiagnosisResultScreen";
 import LoadingLocationScreen from "screens/LoadingLocationScreen";
@@ -44,6 +45,8 @@ function App() {
         />
         <Stack.Screen name="SlotSelector" component={SlotSelectorScreen} />
         <Stack.Screen name="ConfirmBooking" component={ConfirmBookingScreen} />
+        <Stack.Screen name="BookingDetails" component={BookingDetailsScreen} />
+
         <Stack.Screen name="AgeScreen" component={AgeScreen} />
         <Stack.Screen name="DiseaseScreen" component={DiseaseScreen} />
         <Stack.Screen name="RiskCountryScreen" component={RiskCountryScreen} />

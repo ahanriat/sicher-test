@@ -1,4 +1,5 @@
 import BaseText from 'components/BaseText';
+import ButtonPrimary from 'components/ButtonPrimary';
 import SecondaryText from 'components/SecondaryText';
 import SlotSelector from 'components/SlotSelector';
 import React from 'react';
@@ -18,7 +19,7 @@ const styles = StyleSheet.create<Styles>({
   }
 })
 
-export default function ConfirmBookingScreen() {
+export default function ConfirmBookingScreen(props) {
   return (
     <View style={styles.container}>
       <Image source={require('../../assets/map-test-center.png')}/>
@@ -30,9 +31,25 @@ export default function ConfirmBookingScreen() {
                     style={{ marginTop: 20, color: Colors.oceanBlue, textDecorationLine: 'underline' }}/>
         </TouchableOpacity>
       </View>
-      <View style={{ paddingHorizontal: 50 }}>
-        <SlotSelector label={'Today'} labelRight={'14:45'} onPress={() => null} selected={true}/>
+      <View style={{ paddingHorizontal: 50, marginTop: 80 }}>
+        <SlotSelector
+          disabled={true}
+          label={'Today'}
+          labelRight={'14:45'}
+          onPress={() => null}
+          selected={true}/>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 16 }}>
+          <TouchableOpacity onPress={() => props.navigation.goBack()}>
+            <Image source={require('../../assets/icons/decline-booking.png')}/>
+          </TouchableOpacity>
+          <ButtonPrimary
+            iconName={'arrowright'}
+            label={'Confirm booking'}
+            onPress={() => props.navigation.navigate('BookingDetails')}/>
+
+        </View>
       </View>
+      <SecondaryText style={{ textAlign: 'center', marginTop: 70 }} text={'confirmation-disclaimer'}/>
     </View>
   )
 }

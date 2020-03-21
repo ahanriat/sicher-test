@@ -1,6 +1,6 @@
 import SecondaryText from 'components/SecondaryText';
 import * as React from 'react';
-import { Text, StyleProp, ViewStyle, View, Image } from 'react-native';
+import { Text, StyleProp, ViewStyle, View, Image, TextStyle } from 'react-native';
 import { Colors } from 'services/Colors';
 import Gradient from './Gradient';
 import TouchableScale from './TouchableScale';
@@ -8,6 +8,7 @@ import TouchableScale from './TouchableScale';
 export default function SlotSelector(props: ButtonProps) {
   return (
     <TouchableScale
+      disabled={props.disabled}
       onPress={props.onPress}
       style={[
         props.style,
@@ -26,6 +27,7 @@ export default function SlotSelector(props: ButtonProps) {
       >
         <View
           style={{
+            backgroundColor: props.selected ? '' : 'white',
             paddingVertical: 12,
             paddingLeft: props.selected ? 11 : 24,
             paddingRight: 24,
@@ -39,7 +41,7 @@ export default function SlotSelector(props: ButtonProps) {
             {props.selected &&
             <Image source={require('../../assets/icons/green-checkbox.png')} style={{ marginRight: 20 }} />
             }
-            <SecondaryText text={props.label} style={props.selected && { color: Colors.white }}/>
+            <SecondaryText text={props.label} style={[props.selected && { color: Colors.white }, props.textStyle]}/>
           </View>
           <SecondaryText text={props.labelRight} style={props.selected && { color: Colors.white }}/>
         </View>
@@ -50,11 +52,12 @@ export default function SlotSelector(props: ButtonProps) {
 
 interface ButtonProps {
   label: string;
-  labelRight: string
+  labelRight?: string
   icon?: unknown;
 
   onPress(): void;
-
+  textStyle?: TextStyle;
   style?: StyleProp<ViewStyle>;
   selected?: boolean;
+  disabled?: boolean;
 }
