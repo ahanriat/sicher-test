@@ -1,45 +1,11 @@
-import BaseText from "components/BaseText";
-import { useEffect } from "react";
-import * as React from "react";
-import { View, Text, Image } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, ActivityIndicator } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import ButtonPrimary from "components/ButtonPrimary";
-import ButtonSecondary from "components/ButtonSecondary";
-import t from "services/translate";
-import InputText from "components/TextInput";
+
+import LandingScreen from "./src/LandingScreen";
+import LoadingScreen from "./src/LoadingScreen";
 import { loadFontsAsync } from "services/Fonts";
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", marginTop: 100 }}>
-      <Image
-        source={require("./assets/doctor-illu.png")}
-        style={{ width: 175, height: 139 }}
-      />
-      <BaseText text={t("Home Page")} />
-
-      <ButtonPrimary
-        style={{ margin: 24 }}
-        label={t("Go to setings")}
-        iconName={"arrowright"}
-        onPress={() => navigation.navigate("Settings")}
-      />
-      <ButtonPrimary
-        style={{ margin: 24 }}
-        label={t("Go to setings")}
-        onPress={() => navigation.navigate("Settings")}
-      />
-      <BaseText text={"Home Page"} />
-      <InputText placeholder={"Test"} />
-      <ButtonSecondary
-        style={{ margin: 24 }}
-        label={t("Go to setings")}
-        onPress={() => navigation.navigate("Settings")}
-      />
-    </View>
-  );
-}
 
 function SettingsScreen() {
   return (
@@ -52,14 +18,19 @@ function SettingsScreen() {
 const Stack = createStackNavigator();
 
 function App() {
+  const [appStatus, setAppStatus] = useState("loading");
   useEffect(() => {
-    loadFontsAsync();
+    loadFontsAsync().then(() => setAppStatus("success"));
   }, []);
+
+  if (appStatus === "loading") {
+    return <LoadingScreen />;
+  }
 
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={LandingScreen} />
         <Stack.Screen name="Settings" component={SettingsScreen} />
       </Stack.Navigator>
     </NavigationContainer>

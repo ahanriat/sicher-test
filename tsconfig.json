@@ -9,10 +9,9 @@
     "resolveJsonModule": true,
     "baseUrl": "./src",
     "paths": {
-      "components/*": ["components/*"]
+      "components/*": ["components/*"],
+      "assets/*": ["../assets/*"]
     },
-    "exclude": [
-      "node_modules"
-    ]
+    "exclude": ["node_modules"]
   }
 }
