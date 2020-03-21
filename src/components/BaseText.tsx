@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Text,
-  StyleSheet,
-  TextStyle,
-  ViewProps,
-  StyleProp
-} from "react-native";
-import { Fonts } from "services/loadFonts";
+import { Text, StyleSheet, TextStyle, StyleProp } from "react-native";
 
 interface Props {
   text: string;

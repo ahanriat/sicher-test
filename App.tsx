@@ -4,10 +4,11 @@ import * as React from "react";
 import { View, Text, Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { loadFontsAsync } from "services/loadFonts";
 import ButtonPrimary from "components/ButtonPrimary";
 import ButtonSecondary from "components/ButtonSecondary";
 import t from "services/translate";
+import InputText from "components/TextInput";
+import { loadFontsAsync } from "services/Fonts";
 
 function HomeScreen({ navigation }) {
   return (
@@ -29,6 +30,8 @@ function HomeScreen({ navigation }) {
         label={t("Go to setings")}
         onPress={() => navigation.navigate("Settings")}
       />
+      <BaseText text={"Home Page"} />
+      <InputText placeholder={"Test"} />
       <ButtonSecondary
         style={{ margin: 24 }}
         label={t("Go to setings")}
