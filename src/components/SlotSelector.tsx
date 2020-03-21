@@ -8,6 +8,7 @@ import TouchableScale from './TouchableScale';
 export default function SlotSelector(props: ButtonProps) {
   return (
     <TouchableScale
+      disabled={props.disabled}
       onPress={props.onPress}
       style={[
         props.style,
@@ -26,6 +27,7 @@ export default function SlotSelector(props: ButtonProps) {
       >
         <View
           style={{
+            backgroundColor: props.selected ? '' : 'white',
             paddingVertical: 12,
             paddingLeft: props.selected ? 11 : 24,
             paddingRight: 24,
@@ -57,4 +59,5 @@ interface ButtonProps {
 
   style?: StyleProp<ViewStyle>;
   selected?: boolean;
+  disabled?: boolean;
 }

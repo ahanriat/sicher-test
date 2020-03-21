@@ -13,7 +13,6 @@ import t from 'services/translate';
 interface Styles {
   container: ViewStyle
   text: TextStyle
-  secondary: TextStyle
 }
 
 const styles = StyleSheet.create<Styles>({
@@ -26,11 +25,6 @@ const styles = StyleSheet.create<Styles>({
     fontFamily: Fonts.regular,
     fontWeight: '900'
   },
-  secondary: {
-    fontSize: 16,
-    textAlign: 'center',
-    color: Colors.blueGrey,
-  }
 });
 
 export default function DiagnosisResultScreen({ navigation }) {

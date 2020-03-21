@@ -37,21 +37,25 @@ export default class TouchableScale extends Component<TouchableScaleProps> {
     );
   }
 
-  scaleDownAnimation = () =>
+  scaleDownAnimation = () => {
+    if (this.props.disabled) return;
+    
     Animated.timing(this.animationValue, {
       useNativeDriver: true,
       toValue: 1,
       duration: 150,
       easing: Easing.out(Easing.quad)
     }).start();
+  }
 
-  scaleUpAnimation = () =>
+  scaleUpAnimation = () => {
     Animated.timing(this.animationValue, {
       useNativeDriver: true,
       toValue: 0,
       duration: 150,
       easing: Easing.out(Easing.quad)
     }).start();
+  }
 }
 
 interface TouchableScaleProps extends TouchableWithoutFeedbackProps {
