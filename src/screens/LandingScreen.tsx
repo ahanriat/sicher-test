@@ -4,6 +4,7 @@ import BaseText from "components/BaseText";
 import SecondaryText from "components/SecondaryText";
 import t from "services/translate";
 import ButtonPrimary from "components/ButtonPrimary";
+import RadioList from "components/RadioList";
 import RiseAnimation from "components/animations/RiseAnimation";
 
 export default function LandingScreen({ navigation }) {
@@ -22,7 +23,6 @@ export default function LandingScreen({ navigation }) {
 
         <BaseText text={t("landing.disclaimer.title").toUpperCase()} />
         <SecondaryText text={t("landing.disclaimer.message")} />
-
         <ButtonPrimary
           label={t("take-the-test")}
           iconName={"arrowright"}
