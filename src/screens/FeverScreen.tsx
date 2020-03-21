@@ -11,7 +11,7 @@ import BaseText from "components/BaseText";
 export function FeverScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ProgressBar progress={10} style={{ margin: 24 }} />
+      <ProgressBar progress={82} style={{ margin: 24 }} />
       <View
         style={{
           justifyContent: "center",

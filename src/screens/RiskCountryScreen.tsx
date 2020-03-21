@@ -10,7 +10,7 @@ import ButtonIcon from "components/ButtonIcon";
 export function RiskCountryScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ProgressBar progress={10} style={{ margin: 24 }} />
+      <ProgressBar progress={50} style={{ margin: 24 }} />
       <View
         style={{
           justifyContent: "center",

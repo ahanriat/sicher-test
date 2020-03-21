@@ -10,7 +10,7 @@ import ButtonIcon from "components/ButtonIcon";
 export function AgeScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ProgressBar progress={10} style={{ margin: 24 }} />
+      <ProgressBar progress={16} style={{ margin: 24 }} />
       <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
         <H1 text={t("How old are you?")} />
 

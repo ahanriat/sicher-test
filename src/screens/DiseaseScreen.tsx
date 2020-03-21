@@ -10,7 +10,7 @@ import ButtonIcon from "components/ButtonIcon";
 export function DiseaseScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ProgressBar progress={10} style={{ margin: 24 }} />
+      <ProgressBar progress={32} style={{ margin: 24 }} />
       <View
         style={{
           justifyContent: "center",

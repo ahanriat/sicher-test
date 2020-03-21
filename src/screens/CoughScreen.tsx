@@ -11,7 +11,7 @@ import BaseText from "components/BaseText";
 export function CoughScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ProgressBar progress={10} style={{ margin: 24 }} />
+      <ProgressBar progress={100} style={{ margin: 24 }} />
       <View
         style={{
           justifyContent: "center",
@@ -46,7 +46,7 @@ export function CoughScreen({ navigation }) {
         <ButtonPrimary
           label={t("Next question")}
           iconName="arrowright"
-          onPress={() => navigation.navigate("LoadingLocation")}
+          onPress={() => navigation.navigate("DiagnosisResultScreen")}
         />
       </View>
     </SafeAreaView>

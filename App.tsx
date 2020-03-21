@@ -38,7 +38,10 @@ function App() {
         screenOptions={{ cardStyle: { backgroundColor: Colors.white } }}
       >
         <Stack.Screen name="LandingScreen" component={LandingScreen} />
-        <Stack.Screen name="Home" component={DiagnosisResultScreen} />
+        <Stack.Screen
+          name="DiagnosisResultScreen"
+          component={DiagnosisResultScreen}
+        />
         <Stack.Screen
           name="LoadingLocation"
           component={LoadingLocationScreen}
