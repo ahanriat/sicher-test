@@ -1,11 +1,8 @@
 import BaseText from 'components/BaseText';
 import ButtonPrimary from 'components/ButtonPrimary';
-import ButtonSecondary from 'components/ButtonSecondary';
 import SecondaryText from 'components/SecondaryText';
-import InputText from 'components/TextInput';
 import * as React from 'react';
 import { Image, StyleSheet, TextStyle, View, ViewStyle } from 'react-native';
-import { Colors } from 'services/Colors';
 import { Fonts } from 'services/Fonts';
 import t from 'services/translate';
 
