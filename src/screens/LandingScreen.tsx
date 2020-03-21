@@ -26,7 +26,7 @@ export default function LandingScreen({ navigation }) {
         <ButtonPrimary
           label={t("take-the-test")}
           iconName={"arrowright"}
-          onPress={() => navigation.navigate("TestScreen")}
+          onPress={() => navigation.navigate("Home")}
         />
       </RiseAnimation>
     </SafeAreaView>

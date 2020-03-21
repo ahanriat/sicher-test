@@ -28,10 +28,12 @@ const styles = StyleSheet.create<Styles>({
 });
 
 export default function DiagnosisResultScreen({ navigation }) {
+  const isTestResultPositive = false;
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/doctor-illu.png')}
+        source={isTestResultPositive ? require('../../assets/doctor-not-tested.png') : 
+          require('../../assets/doctor-test-ok.png')}
         style={{ width: 175, height: 139 }}
       />
       <BaseText text={t('test-result')} style={{ marginTop: 33, fontFamily: Fonts.bold }} />
