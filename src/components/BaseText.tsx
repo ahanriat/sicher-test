@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet, TextStyle, ViewProps, StyleProp } from 'react-native';
+import { Fonts } from 'services/loadFonts';
 
 interface Props {
   text: string;
@@ -12,7 +13,7 @@ interface Styles {
 
 const styles = StyleSheet.create<Styles>({
   text: {
-    fontFamily: 'regular',
+    fontFamily: Fonts.bold,
     fontSize: 16,
     lineHeight: 19
   }

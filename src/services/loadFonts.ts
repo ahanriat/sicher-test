@@ -1,18 +1,18 @@
 import * as Font from 'expo-font';
 
 export const Fonts = {
-  black: 'Roboto-Black',
-  blackItalic: 'Roboto-BlackItalic',
-  bold: 'Roboto-Bold',
-  italic: 'Roboto-Italic',
-  boldItalic: 'Roboto-BoldItalic',
-  light: 'Roboto-Light',
-  lightItalic: 'RobotoLightItalic',
-  medium: 'Roboto-Medium',
-  mediumItalic: 'Roboto-MediumItalic',
-  regular: 'Roboto-Regular',
-  thin: 'Roboto-Thin',
-  thinItalic: 'Roboto-ThinItalic',
+  black: 'black',
+  blackItalic: 'blackItalic',
+  bold: 'bold',
+  italic: 'italic',
+  boldItalic: 'boldItalic',
+  light: 'light',
+  lightItalic: 'lightItalic',
+  medium: 'medium',
+  mediumItalic: 'mediumItalic',
+  regular: 'regular',
+  thin: 'thin',
+  thinItalic: 'thinItalic',
 };
 
 export type Fonts = keyof typeof Fonts;
