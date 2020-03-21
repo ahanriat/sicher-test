@@ -7,6 +7,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { loadFontsAsync } from "services/loadFonts";
 import ButtonPrimary from "components/ButtonPrimary";
 import ButtonSecondary from "components/ButtonSecondary";
+import t from "services/translate";
 
 function HomeScreen({ navigation }) {
   return (
@@ -15,22 +16,22 @@ function HomeScreen({ navigation }) {
         source={require("./assets/doctor-illu.png")}
         style={{ width: 175, height: 139 }}
       />
-      <BaseText text={"Home Page"} />
+      <BaseText text={t("Home Page")} />
 
       <ButtonPrimary
         style={{ margin: 24 }}
-        label={"Go to setings"}
+        label={t("Go to setings")}
         iconName={"arrowright"}
         onPress={() => navigation.navigate("Settings")}
       />
       <ButtonPrimary
         style={{ margin: 24 }}
-        label={"Go to setings"}
+        label={t("Go to setings")}
         onPress={() => navigation.navigate("Settings")}
       />
       <ButtonSecondary
         style={{ margin: 24 }}
-        label={"Go to setings"}
+        label={t("Go to setings")}
         onPress={() => navigation.navigate("Settings")}
       />
     </View>
