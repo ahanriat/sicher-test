@@ -1,10 +1,10 @@
 import React from "react";
-import { Text, StyleSheet, TextStyle, StyleProp } from "react-native";
+import { Text, StyleSheet, TextStyle, StyleProp, TextProps } from 'react-native';
 import { Fonts } from "services/Fonts";
 
-interface Props {
+export interface BaseTextProps extends TextProps {
   text: string;
-  styles?: StyleProp<TextStyle>;
+  style?: StyleProp<TextStyle>;
 }
 
 interface Styles {
@@ -13,12 +13,12 @@ interface Styles {
 
 const styles = StyleSheet.create<Styles>({
   text: {
-    fontFamily: Fonts.bold,
+    fontFamily: Fonts.regular,
     fontSize: 16,
     lineHeight: 19
   }
 });
 
-export default function BaseText(props: Props) {
-  return <Text style={[styles.text, props.styles]}>{props.text}</Text>;
+export default function BaseText(props: BaseTextProps) {
+  return <Text style={[styles.text, props.style]}>{props.text}</Text>;
 }
