@@ -3,7 +3,9 @@ import { Text, StyleProp, ViewStyle } from "react-native";
 import Gradient from "./Gradient";
 import TouchableScale from "./TouchableScale";
 
-export default function Button(props: ButtonProps) {
+import { AntDesign } from "@expo/vector-icons";
+
+export default function ButtonPrimary(props: ButtonProps) {
   return (
     <TouchableScale
       onPress={props.onPress}
@@ -32,9 +34,23 @@ export default function Button(props: ButtonProps) {
           elevation: 5
         }}
       >
-        <Text style={{ fontSize: 16, color: "white", fontWeight: "bold" }}>
-          {props.label}
-        </Text>
+        <>
+          <Text style={{ fontSize: 16, color: "white", fontWeight: "bold" }}>
+            {props.label}
+          </Text>
+          {props.iconName && (
+            <AntDesign
+              name={props.iconName}
+              size={20}
+              color="white"
+              style={{
+                marginLeft: 8,
+                height: 20,
+                marginRight: -8
+              }}
+            />
+          )}
+        </>
       </Gradient>
     </TouchableScale>
   );
@@ -42,7 +58,7 @@ export default function Button(props: ButtonProps) {
 
 interface ButtonProps {
   label: string;
-  icon?: unknown;
+  iconName?: unknown;
   onPress(): void;
   style?: StyleProp<ViewStyle>;
 }
