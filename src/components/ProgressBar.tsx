@@ -10,7 +10,6 @@ export default function ProgressBar(props: ProgressBarProps) {
           height: 12,
           alignSelf: "stretch",
           borderRadius: 12,
-          width: 200,
           flexDirection: "row",
           overflow: "hidden"
         }

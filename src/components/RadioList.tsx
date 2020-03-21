@@ -15,8 +15,8 @@ export default function RadioList(props: RadioListProps) {
       {props.options.map((option, index) =>
         index === selectedIndex ? (
           <RadioButtonChecked
-            label={option}
-            key={option}
+            label={option.label}
+            key={option.label}
             onPress={() => {
               setSelectedIndex(index);
               props.onSelect(index);
@@ -24,8 +24,8 @@ export default function RadioList(props: RadioListProps) {
           />
         ) : (
           <RadioButtonUnchecked
-            label={option}
-            key={option}
+            label={option.label}
+            key={option.key}
             onPress={() => {
               setSelectedIndex(index);
               props.onSelect(index);
@@ -38,7 +38,10 @@ export default function RadioList(props: RadioListProps) {
 }
 
 export interface RadioListProps {
-  options: string[];
+  options: Array<{
+    label: string;
+    key: string;
+  }>;
   onSelect(index: number): void;
   style?: StyleProp<ViewStyle>;
 }
