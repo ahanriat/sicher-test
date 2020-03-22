@@ -64,7 +64,7 @@ export default function ConfirmBookingScreen(props) {
           <ButtonPrimary
             iconName={"arrowright"}
             label={t("booking-confirmation.confirm")}
-            onPress={() => props.navigation.navigate("BookingDetails")}
+            onPress={() => props.navigation.navigate("BookingDetails", { availableSlot })}
           />
         </View>
       </View>

@@ -11,6 +11,7 @@ import {
   ViewStyle
 } from 'react-native';
 import t from "services/translate";
+import { Fonts } from 'services/Fonts';
 
 interface Styles {
   container: ViewStyle;
@@ -31,12 +32,12 @@ export default function SlotSelectorScreen(props) {
   // @ts-ignore
   const theSlots = [...Array(10).keys()]
     .map((i) => {
-      const dayOfWeek = i > 6 ? 'Tomorow' : 'Today';
+      const dayOfWeek = i > 6 ? t('tomorow') : t('today');
       const time = `${i + 6}:${i > 5 ? i - i : i}${i % 2 === 0 ? 5 : 0}`;
       return {
         dayOfWeek,
         time,
-        testCenterId: 0
+        testCenterId: Math.floor(Math.random() * 3)
       }
     })
 
@@ -57,7 +58,7 @@ export default function SlotSelectorScreen(props) {
                 style={{ marginTop: 24 }}
               />
               <BaseText
-                style={{ textAlign: "center" }}
+                style={{ textAlign: "center", marginTop: 20, fontFamily: Fonts.bold }}
                 text={t("recommend-slots")}
               />
             </View>
