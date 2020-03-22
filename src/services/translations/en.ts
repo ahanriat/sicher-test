@@ -28,7 +28,7 @@ export default {
   "booking-details.add-to-calendar": "Add to calendar",
   "booking-details.faq": "Frequently asked questions",
   "booking-details.question-1":
-    "Is it possible to get an earlier spot if I come earlier",
+    "Is it possible to get an earlier spot if I come earlier?",
   "booking-details.answer-1":
     "No. Please stick to the time displayed above. We want to embrace social distancing at checkpoints.",
 

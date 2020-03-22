@@ -192,18 +192,20 @@ export default function BookingDetailsScreen(props) {
         <View
           style={{ paddingHorizontal: 50, marginTop: 26, alignItems: "center" }}
         >
-          <BaseText
-            style={{
-              textAlign: "center",
-              fontSize: 14,
-              fontFamily: Fonts.bold
-            }}
-            text={t("booking-details.question-1")}
-          />
-          <BaseText
-            style={{ textAlign: "center", marginTop: 13 }}
-            text={t("booking-details.answer-1")}
-          />
+          <MaxWidth>
+            <BaseText
+              style={{
+                textAlign: "center",
+                fontSize: 14,
+                fontFamily: Fonts.bold
+              }}
+              text={t("booking-details.question-1")}
+            />
+            <BaseText
+              style={{ textAlign: "center", marginTop: 13 }}
+              text={t("booking-details.answer-1")}
+            />
+          </MaxWidth>
           <Image
             source={require("../../assets/icons/carousel-dots.png")}
             style={{ marginTop: 44, marginBottom: 50 }}
