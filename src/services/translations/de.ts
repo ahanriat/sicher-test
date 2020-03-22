@@ -8,13 +8,14 @@ export default {
     "Die Verwendung dieser App ersetzt die medizinische Behandlung durch Fachpersonal nicht. Die CovApp soll den Prozess der Testungen für den neuartigen Coronavirus SARS-CoV-2 für die Charité und andere Kliniken erleichtern. Kontaktieren Sie bei ernstzunehmenden Symptomen bitte umgehend einen Arzt/ eine Ärztin.",
   "landing.cta.take-the-test": "Zum Fragebogen",
 
-  "test-result-baseline": "Ihr Testergebnis lautet",
-  "test-result-positive": "Sie sollten sich testen lassen",
-  "test-result-negative": "Sie müssen sich nicht testen lassen",
+  "test-result-positive":
+    "Ihr Testergebnis lautet: Sie sollten sich testen lassen",
+  "test-result-negative":
+    "Ihr Testergebnis lautet: Sie müssen sich nicht testen lassen",
   "find-closest-test-centers": "Finde das nächste Testzentrum",
   "find-help": "So können Sie helfen",
   "allow-location": "Bitte aktivieren Sie die Ortungsdienste",
-  "we-dont-store-datas": "Keine Panik, wir speichern Ihre Daten nicht",
+  "we-dont-store-datas": "Keine Panik, wir speichern Ihre Datei nicht",
   "searching-for-centers-around-you": "Suche nach Testzentren in Ihrer Nähe",
   "search-results": "Wir haben drei Testzentren in Ihrer Nähe gefunden",
   "recommend-slots": "Mögliche Termine",

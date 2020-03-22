@@ -1,5 +1,5 @@
-import RiseAnimation from 'components/animations/RiseAnimation';
-import TobogganAnimation from 'components/animations/TobogganAnimation';
+import RiseAnimation from "components/animations/RiseAnimation";
+import TobogganAnimation from "components/animations/TobogganAnimation";
 import BaseText from "components/BaseText";
 import ButtonPrimary from "components/ButtonPrimary";
 import SecondaryText from "components/SecondaryText";
@@ -43,7 +43,7 @@ export default function DiagnosisResultScreen({ navigation }) {
             style={{ width: 175, height: 139 }}
           />
           <BaseText
-            text={t("test-result-baseline")}
+            text={t("test-result-positive")}
             style={{ marginTop: 33, fontFamily: Fonts.bold }}
           />
           <ButtonPrimary
@@ -68,7 +68,7 @@ export default function DiagnosisResultScreen({ navigation }) {
           style={{ width: 175, height: 139 }}
         />
         <BaseText
-          text={t("test-result-baseline")}
+          text={t("test-result-negative")}
           style={{ marginTop: 33, fontFamily: Fonts.bold }}
         />
         <ButtonPrimary
