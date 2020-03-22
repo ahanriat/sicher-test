@@ -3,7 +3,7 @@ import BaseText from "components/BaseText";
 import SecondaryText from "components/SecondaryText";
 import SlotSelector from "components/SlotSelector";
 import React, { useState } from "react";
-import { Image, StyleSheet, View, ViewStyle, ScrollView } from "react-native";
+import { Image, View, ViewStyle, ScrollView } from "react-native";
 import t from "services/translate";
 import { Fonts } from "services/Fonts";
 
@@ -11,16 +11,6 @@ interface Styles {
   container: ViewStyle;
   slotsContainer: ViewStyle;
 }
-
-const styles = StyleSheet.create<Styles>({
-  container: {
-    flex: 1
-  },
-  slotsContainer: {
-    marginTop: 40,
-    paddingHorizontal: 70
-  }
-});
 
 export default function SlotSelectorScreen(props) {
   // @ts-ignore
@@ -37,7 +27,11 @@ export default function SlotSelectorScreen(props) {
   const [slots] = useState(theSlots);
 
   return (
-    <ScrollView style={styles.slotsContainer}>
+    <ScrollView
+      style={{
+        flex: 1
+      }}
+    >
       <View style={{ alignItems: "center", marginBottom: 40 }}>
         <Image
           style={{ width: 187, height: 187, marginTop: 44 }}
@@ -53,7 +47,7 @@ export default function SlotSelectorScreen(props) {
           text={t("recommend-slots")}
         />
       </View>
-      <RiseAnimation style={styles.container}>
+      <RiseAnimation style={{ flex: 1 }}>
         {slots.map((slot, index) => (
           <SlotSelector
             key={slot.time + index}

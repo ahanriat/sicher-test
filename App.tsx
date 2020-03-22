@@ -34,16 +34,16 @@ function App() {
           headerMode={"none"}
           screenOptions={{ cardStyle: { backgroundColor: Colors.white } }}
         >
-          <Stack.Screen
-            name="LoadingLocation"
-            component={LoadingLocationScreen}
-          />
           <Stack.Screen name="LandingScreen" component={LandingScreen} />
           <Stack.Screen name="Questionnaire" component={Questionnaire} />
 
           <Stack.Screen
             name="DiagnosisResultScreen"
             component={DiagnosisResultScreen}
+          />
+          <Stack.Screen
+            name="LoadingLocation"
+            component={LoadingLocationScreen}
           />
           <Stack.Screen name="SlotSelector" component={SlotSelectorScreen} />
           <Stack.Screen

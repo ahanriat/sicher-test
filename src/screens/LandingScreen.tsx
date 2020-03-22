@@ -12,8 +12,9 @@ export default function LandingScreen({ navigation }) {
     <SafeAreaView
       style={{
         flex: 1,
-        justifyContent: "space-around",
-        alignItems: "center"
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingVertical: 44
       }}
     >
       <RiseAnimation staggerDuration={100}>

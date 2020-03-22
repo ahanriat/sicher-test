@@ -16,7 +16,9 @@ function Questionnaire() {
   return (
     <Stack.Navigator
       headerMode={"none"}
-      screenOptions={{ cardStyle: { backgroundColor: Colors.white } }}
+      screenOptions={{
+        cardStyle: { backgroundColor: Colors.white, paddingVertical: 24 }
+      }}
     >
       <Stack.Screen name="AgeScreen" component={AgeScreen} />
       <Stack.Screen name="DiseaseScreen" component={DiseaseScreen} />
