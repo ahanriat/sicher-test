@@ -7,8 +7,6 @@ export default function t(key: keyof typeof english & keyof typeof german) {
     case "de":
       return german[key] || english[key];
     default:
-      return german[key] || english[key];
-
       return english[key];
   }
 }
