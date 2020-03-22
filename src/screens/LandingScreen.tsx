@@ -17,18 +17,27 @@ export default function LandingScreen({ navigation }) {
       }}
     >
       <RiseAnimation staggerDuration={100}>
-        <Image source={require("assets/sichertest-logo.png")} />
-        <Image source={require("assets/doctor-illu.png")} />
+        <Image
+          source={require("assets/sichertest-logo.png")}
+          style={{ width: 120, height: 45 }}
+        />
+        <Image
+          style={{ width: 175, height: 139 }}
+          source={require("assets/doctor-illu.png")}
+        />
 
         <View style={{ padding: 44, alignItems: "center" }}>
-          <Image source={require("assets/icons/warning-icon.png")} />
+          <Image
+            style={{ width: 72, height: 72 }}
+            source={require("assets/icons/warning-icon.png")}
+          />
 
           <BaseText
             text={t("Disclaimer").toUpperCase()}
-            style={{ marginBottom: 40 }}
+            style={{ marginBottom: 40, fontWeight: "bold" }}
           />
           <SecondaryText
-            style={{ textAlign: "center" }}
+            style={{ textAlign: "center", maxWidth: 400 }}
             text={t(`l Usage of this app does not substitute medical treatment by a physician or clinical diagnostics.
 The CovApp serves to improve the procedures at the Charité examination centre and other outpatient clinics in connection with the novel Coronavirus SARS-CoV-2. If you currently feel seriously ill, please immediately contact a physician.`)}
           />

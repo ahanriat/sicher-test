@@ -13,6 +13,7 @@ import { Colors } from "services/Colors";
 import { loadFontsAsync } from "services/Fonts";
 import LandingScreen from "screens/LandingScreen";
 import Questionnaire from "screens/Questionnaire";
+import MaxWidth from "components/MaxWidth";
 
 const Stack = createStackNavigator();
 
@@ -27,27 +28,35 @@ function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        headerMode={"none"}
-        screenOptions={{ cardStyle: { backgroundColor: Colors.white } }}
-      >
-        <Stack.Screen name="LandingScreen" component={LandingScreen} />
-        <Stack.Screen
-          name="DiagnosisResultScreen"
-          component={DiagnosisResultScreen}
-        />
-        <Stack.Screen
-          name="LoadingLocation"
-          component={LoadingLocationScreen}
-        />
-        <Stack.Screen name="SlotSelector" component={SlotSelectorScreen} />
-        <Stack.Screen name="ConfirmBooking" component={ConfirmBookingScreen} />
-        <Stack.Screen name="BookingDetails" component={BookingDetailsScreen} />
+    <MaxWidth maxWidth={800}>
+      <NavigationContainer>
+        <Stack.Navigator
+          headerMode={"none"}
+          screenOptions={{ cardStyle: { backgroundColor: Colors.white } }}
+        >
+          <Stack.Screen name="LandingScreen" component={LandingScreen} />
+          <Stack.Screen
+            name="DiagnosisResultScreen"
+            component={DiagnosisResultScreen}
+          />
+          <Stack.Screen
+            name="LoadingLocation"
+            component={LoadingLocationScreen}
+          />
+          <Stack.Screen name="SlotSelector" component={SlotSelectorScreen} />
+          <Stack.Screen
+            name="ConfirmBooking"
+            component={ConfirmBookingScreen}
+          />
+          <Stack.Screen
+            name="BookingDetails"
+            component={BookingDetailsScreen}
+          />
 
-        <Stack.Screen name="Questionnaire" component={Questionnaire} />
-      </Stack.Navigator>
-    </NavigationContainer>
+          <Stack.Screen name="Questionnaire" component={Questionnaire} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </MaxWidth>
   );
 }
 
