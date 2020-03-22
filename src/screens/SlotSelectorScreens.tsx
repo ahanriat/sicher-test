@@ -31,7 +31,7 @@ export default function SlotSelectorScreen(props) {
   const theSlots = [...Array(10).keys()]
     .map((i) => {
       const dayOfWeek = i > 6 ? 'Tomorow' : 'Today';
-      const time = `${i + 6}:${i > 6 ? i - i : i}${i % 2 === 0 ? 5 : 0}`;
+      const time = `${i + 6}:${i > 5 ? i - i : i}${i % 2 === 0 ? 5 : 0}`;
       return {
         dayOfWeek,
         time,
