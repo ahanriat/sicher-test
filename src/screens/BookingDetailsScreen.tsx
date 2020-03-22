@@ -13,10 +13,10 @@ import {
 import getCenter from "services/TestCenterService";
 import BaseText from "components/BaseText";
 import t from "services/translate";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import { Fonts } from "services/Fonts";
 import SecondaryText from "components/SecondaryText";
 import SlotSelector from "components/SlotSelector";
+import { Colors } from "services/Colors";
 
 interface Styles {
   container: ViewStyle;
