@@ -15,6 +15,7 @@ import { Colors } from "services/Colors";
 import { Fonts } from "services/Fonts";
 import t from "services/translate";
 import getCenter from "services/TestCenterService";
+import ButtonIcon from "components/ButtonIcon";
 
 interface Styles {
   container: ViewStyle;
@@ -55,7 +56,13 @@ export default function ConfirmBookingScreen(props) {
           />
         </TouchableOpacity>
       </View>
-      <View style={{ paddingHorizontal: 50, marginTop: 80 }}>
+      <View
+        style={{
+          marginTop: 80,
+          width: 300,
+          alignSelf: "center"
+        }}
+      >
         <SlotSelector
           disabled={true}
           label={availableSlot.dayOfWeek}
@@ -71,10 +78,12 @@ export default function ConfirmBookingScreen(props) {
             marginTop: 16
           }}
         >
-          <TouchableOpacity onPress={() => props.navigation.goBack()}>
-            <Image source={require("../../assets/icons/decline-booking.png")} />
-          </TouchableOpacity>
+          <ButtonIcon
+            onPress={() => props.navigation.goBack()}
+            iconName="arrowleft"
+          />
           <ButtonPrimary
+            style={{ flex: 1, marginLeft: 12 }}
             iconName={"arrowright"}
             label={t("booking-confirmation.confirm")}
             onPress={() =>

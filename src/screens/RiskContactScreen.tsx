@@ -6,8 +6,8 @@ import RadioList from "components/RadioList";
 import ProgressBar from "components/ProgressBar";
 import ButtonPrimary from "components/ButtonPrimary";
 import ButtonIcon from "components/ButtonIcon";
-import BaseText from "components/BaseText";
 import { setCloseContactRisk } from "services/QuestionnaireService";
+import SecondaryText from "components/SecondaryText";
 
 export function RiskContactScreen({ navigation }) {
   const [isValid, setIsValid] = useState(false);
@@ -26,7 +26,7 @@ export function RiskContactScreen({ navigation }) {
           text={t("risk-contact.title")}
           style={{ textAlign: "center", marginBottom: 40 }}
         />
-        <BaseText
+        <SecondaryText
           style={{ textAlign: "center", marginBottom: 40 }}
           text={t("risk-contact.disclaimer")}
         />
