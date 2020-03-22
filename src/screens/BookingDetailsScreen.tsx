@@ -47,7 +47,7 @@ export default function BookingDetailsScreen(props) {
   const { availableSlot } = props.route.params;
   const center = getCenter(availableSlot.testCenterId);
   const resetRoute = () => {
-    props.navigation.popToTop();
+    props.navigation.navigate("SlotSelector");
   };
 
   const openMaps = () => {
