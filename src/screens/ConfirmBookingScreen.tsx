@@ -27,7 +27,7 @@ export default function ConfirmBookingScreen(props) {
   
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/map-test-center.png')}/>
+      <Image source={require('../../assets/map-test-center.png')} style={{ height: 185 }}/>
       <View style={{ alignItems: 'center' }}>
         <BaseText text={center.name} style={{ fontFamily: Fonts.bold, fontSize: 20, marginBottom: 10 }}/>
         <SecondaryText text={center.address} style={{ textAlign: 'center' }}/>

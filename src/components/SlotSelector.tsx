@@ -49,7 +49,7 @@ export default function SlotSelector(props: ButtonProps) {
             {props.selected && (
               <Image
                 source={require("../../assets/icons/green-checkbox.png")}
-                style={{ marginRight: 20 }}
+                style={{ marginRight: 20, height: 23, width: 23 }}
               />
             )}
             <SecondaryText
