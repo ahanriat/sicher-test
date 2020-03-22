@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, SafeAreaView } from "react-native";
 import H1 from "components/H1";
 import t from "services/translate";
@@ -6,8 +6,10 @@ import RadioList from "components/RadioList";
 import ProgressBar from "components/ProgressBar";
 import ButtonPrimary from "components/ButtonPrimary";
 import ButtonIcon from "components/ButtonIcon";
+import { setCoughRisk } from "services/QuestionnaireService";
 
 export function RiskCountryScreen({ navigation }) {
+  const [isValid, setIsValid] = useState(false);
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ProgressBar progress={50} style={{ margin: 24 }} />
@@ -41,8 +43,9 @@ export function RiskCountryScreen({ navigation }) {
               key: "none"
             }
           ]}
-          onSelect={() => {
-            /** TODO */
+          onSelect={key => {
+            setIsValid(true);
+            setCoughRisk(key !== "none");
           }}
         />
       </View>
@@ -55,6 +58,7 @@ export function RiskCountryScreen({ navigation }) {
       >
         <ButtonIcon iconName="arrowleft" onPress={navigation.goBack} />
         <ButtonPrimary
+          disabled={!isValid}
           label={t("Next question")}
           iconName="arrowright"
           onPress={() => navigation.navigate("RiskContactScreen")}

@@ -12,12 +12,7 @@ import SlotSelectorScreen from "screens/SlotSelectorScreens";
 import { Colors } from "services/Colors";
 import { loadFontsAsync } from "services/Fonts";
 import LandingScreen from "screens/LandingScreen";
-import { AgeScreen } from "screens/AgeScreen";
-import { DiseaseScreen } from "screens/DiseaseScreen";
-import { RiskCountryScreen } from "screens/RiskCountryScreen";
-import { RiskContactScreen } from "screens/RiskContactScreen";
-import { FeverScreen } from "screens/FeverScreen";
-import { CoughScreen } from "screens/CoughScreen";
+import Questionnaire from "screens/Questionnaire";
 
 const Stack = createStackNavigator();
 
@@ -50,12 +45,7 @@ function App() {
         <Stack.Screen name="ConfirmBooking" component={ConfirmBookingScreen} />
         <Stack.Screen name="BookingDetails" component={BookingDetailsScreen} />
 
-        <Stack.Screen name="AgeScreen" component={AgeScreen} />
-        <Stack.Screen name="DiseaseScreen" component={DiseaseScreen} />
-        <Stack.Screen name="RiskCountryScreen" component={RiskCountryScreen} />
-        <Stack.Screen name="RiskContactScreen" component={RiskContactScreen} />
-        <Stack.Screen name="FeverScreen" component={FeverScreen} />
-        <Stack.Screen name="CoughScreen" component={CoughScreen} />
+        <Stack.Screen name="Questionnaire" component={Questionnaire} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -36,7 +36,7 @@ The CovApp serves to improve the procedures at the Charité examination centre a
         <ButtonPrimary
           label={t("Take the test")}
           iconName={"arrowright"}
-          onPress={() => navigation.navigate("AgeScreen")}
+          onPress={() => navigation.navigate("Questionnaire")}
         />
       </RiseAnimation>
     </SafeAreaView>

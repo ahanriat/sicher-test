@@ -19,7 +19,7 @@ export default function RadioList(props: RadioListProps) {
             key={option.label}
             onPress={() => {
               setSelectedIndex(index);
-              props.onSelect(index);
+              props.onSelect(option.key);
             }}
           />
         ) : (
@@ -28,7 +28,7 @@ export default function RadioList(props: RadioListProps) {
             key={option.key}
             onPress={() => {
               setSelectedIndex(index);
-              props.onSelect(index);
+              props.onSelect(option.key);
             }}
           />
         )
@@ -42,7 +42,7 @@ export interface RadioListProps {
     label: string;
     key: string;
   }>;
-  onSelect(index: number): void;
+  onSelect(key: string): void;
   style?: StyleProp<ViewStyle>;
 }
 
@@ -85,8 +85,7 @@ function RadioButtonChecked(props: RadioButtonProps) {
         style={{
           marginLeft: 8,
           fontSize: 24,
-          color: "#44E98A",
-          fontWeight: "bold"
+          color: "#44E98A"
         }}
       >
         {props.label}

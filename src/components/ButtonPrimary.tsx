@@ -8,10 +8,12 @@ import { AntDesign } from "@expo/vector-icons";
 export default function ButtonPrimary(props: ButtonProps) {
   return (
     <TouchableScale
+      disabled={props.disabled}
       onPress={props.onPress}
       style={[
         props.style,
         {
+          opacity: props.disabled ? 0.5 : 1,
           shadowColor: "#67BCEF",
           shadowOffset: { width: 0, height: 5 },
           shadowOpacity: 0.7,
@@ -58,6 +60,7 @@ export default function ButtonPrimary(props: ButtonProps) {
 
 interface ButtonProps {
   label: string;
+  disabled?: boolean;
   iconName?: unknown;
   onPress(): void;
   style?: StyleProp<ViewStyle>;

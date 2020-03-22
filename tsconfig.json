@@ -11,7 +11,7 @@
     "paths": {
       "components/*": ["components/*"],
       "assets/*": ["../assets/*"]
-    },
-    "exclude": ["node_modules"]
-  }
+    }
+  },
+  "exclude": ["node_modules"]
 }
