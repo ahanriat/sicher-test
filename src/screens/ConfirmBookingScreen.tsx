@@ -6,6 +6,7 @@ import React from 'react';
 import { Image, StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { Colors } from 'services/Colors';
 import { Fonts } from 'services/Fonts';
+import getCenter from 'services/TestCenterService';
 
 
 interface Styles {
@@ -17,15 +18,18 @@ const styles = StyleSheet.create<Styles>({
     flex: 1,
     marginTop: 20,
   }
-})
+});
 
 export default function ConfirmBookingScreen(props) {
+  const { availableSlot } = props.route.params;
+  const center = getCenter(availableSlot.testCenterId);
+  
   return (
     <View style={styles.container}>
       <Image source={require('../../assets/map-test-center.png')}/>
       <View style={{ alignItems: 'center' }}>
-        <BaseText text={'Test Center A'} style={{ fontFamily: Fonts.bold, fontSize: 20, marginBottom: 10 }}/>
-        <SecondaryText text={'Driesener Str, 24 \n Berlin, DE '} style={{ textAlign: 'center' }}/>
+        <BaseText text={center.name} style={{ fontFamily: Fonts.bold, fontSize: 20, marginBottom: 10 }}/>
+        <SecondaryText text={center.address} style={{ textAlign: 'center' }}/>
         <TouchableOpacity>
           <BaseText text={'get-directions'}
                     style={{ marginTop: 20, color: Colors.oceanBlue, textDecorationLine: 'underline' }}/>
@@ -34,8 +38,8 @@ export default function ConfirmBookingScreen(props) {
       <View style={{ paddingHorizontal: 50, marginTop: 80 }}>
         <SlotSelector
           disabled={true}
-          label={'Today'}
-          labelRight={'14:45'}
+          label={availableSlot.dayOfWeek}
+          labelRight={availableSlot.time}
           onPress={() => null}
           selected={true}/>
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 16 }}>
@@ -45,7 +49,7 @@ export default function ConfirmBookingScreen(props) {
           <ButtonPrimary
             iconName={'arrowright'}
             label={'Confirm booking'}
-            onPress={() => props.navigation.navigate('BookingDetails')}/>
+            onPress={() => props.navigation.navigate('BookingDetails', { availableSlot })}/>
 
         </View>
       </View>

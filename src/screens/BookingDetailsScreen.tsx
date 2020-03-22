@@ -1,10 +1,12 @@
 import BaseText from 'components/BaseText';
 import SecondaryText from 'components/SecondaryText';
 import SlotSelector from 'components/SlotSelector';
+import { Linking } from 'expo';
 import React from 'react';
-import { Image, ScrollView, StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Alert, Image, Platform, ScrollView, StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { Colors } from 'services/Colors';
 import { Fonts } from 'services/Fonts';
+import getCenter from 'services/TestCenterService';
 
 interface Styles {
   container: ViewStyle;
@@ -31,6 +33,25 @@ const styles = StyleSheet.create<Styles>({
 });
 
 export default function BookingDetailsScreen(props) {
+  const { availableSlot } = props.route.params;
+  const center = getCenter(availableSlot.testCenterId);
+  const resetRoute = () => {
+    props.navigation.popToTop();
+  }
+  
+  const openMaps = () => {
+    const scheme = Platform.select({ ios: 'maps:0,0?q=', android: 'geo:0,0?q=' });
+    const latLng = `52.5200,13.4050`;
+    const label = center.address;
+    const url = Platform.select({
+      ios: `${scheme}${label}@${latLng}`,
+      android: `${scheme}${latLng}(${label})`
+    });
+
+
+    Linking.openURL(url);
+  }
+  
   return (
     <ScrollView style={styles.container}>
       <View style={styles.subContainer}>
@@ -38,14 +59,16 @@ export default function BookingDetailsScreen(props) {
           <BaseText
             text={'my-appointment'}
             style={{ color: 'rgba(41, 96, 129, 0.4)' }}/>
-          <TouchableOpacity style={{ position: 'absolute', right: 20 }}>
+          <TouchableOpacity 
+            style={{ position: 'absolute', right: 20 }} 
+            onPress={resetRoute}>
             <BaseText text={'edit'} style={{ color: Colors.oceanBlue }}/>
           </TouchableOpacity>
         </View>
-        <BaseText text={'Test Center A'}
+        <BaseText text={center.name}
                   style={{ fontFamily: Fonts.bold, fontSize: 20, textAlign: 'center' }}/>
-        <SecondaryText text={'Driesener Str, 24 \n Berlin, DE '} style={{ textAlign: 'center', marginTop: 10 }}/>
-        <SecondaryText text={'Entrace A'} style={{ textAlign: 'center', fontFamily: Fonts.bold, marginTop: 15 }}/>
+        <SecondaryText text={center.address} style={{ textAlign: 'center', marginTop: 10 }}/>
+        <SecondaryText text={'Eingang A'} style={{ textAlign: 'center', fontFamily: Fonts.bold, marginTop: 15 }}/>
         <SlotSelector
           style={{ marginTop: 32 }}
           disabled={true}
@@ -55,16 +78,20 @@ export default function BookingDetailsScreen(props) {
         <SlotSelector
           disabled={true}
           style={{ marginTop: 10 }}
-          label={'Today'}
-          labelRight={'14:45'}
+          label={availableSlot.dayOfWeek}
+          labelRight={availableSlot.time}
           onPress={() => null}
           selected={true}/>
 
-        <TouchableOpacity style={{ flexDirection: 'row', marginTop: 35, justifyContent: 'center' }}>
+        <TouchableOpacity 
+          onPress={openMaps}
+          style={{ flexDirection: 'row', marginTop: 35, justifyContent: 'center' }}>
           <Image source={require('../../assets/icons/icon-near-me.png')}/>
           <BaseText text={'get-directions'} style={{ marginLeft: 7, fontFamily: Fonts.bold, color: Colors.oceanBlue }}/>
         </TouchableOpacity>
-        <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 23, marginLeft: 12 }}>
+        <TouchableOpacity 
+          onPress={() => Alert.alert('Your appointment was added to your calendar')}
+          style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 23, marginLeft: 12 }}>
           <Image source={require('../../assets/icons/icon-calendar.png')}/>
           <BaseText text={'add-to-calendar'}
                     style={{ marginLeft: 7, fontFamily: Fonts.bold, color: Colors.oceanBlue }}/>

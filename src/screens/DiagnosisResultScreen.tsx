@@ -1,3 +1,5 @@
+import RiseAnimation from 'components/animations/RiseAnimation';
+import TobogganAnimation from 'components/animations/TobogganAnimation';
 import BaseText from "components/BaseText";
 import ButtonPrimary from "components/ButtonPrimary";
 import SecondaryText from "components/SecondaryText";
@@ -13,7 +15,6 @@ import {
 import { Fonts } from "services/Fonts";
 import t from "services/translate";
 import { isTestPositive } from "services/QuestionnaireService";
-import RiseAnimation from "components/animations/RiseAnimation";
 
 interface Styles {
   container: ViewStyle;
