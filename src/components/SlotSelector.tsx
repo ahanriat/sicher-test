@@ -45,7 +45,13 @@ export default function SlotSelector(props: ButtonProps) {
             justifyContent: "space-between"
           }}
         >
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              flex: 1
+            }}
+          >
             {props.selected && (
               <Image
                 source={require("../../assets/icons/green-checkbox.png")}
@@ -60,10 +66,12 @@ export default function SlotSelector(props: ButtonProps) {
               ]}
             />
           </View>
-          <SecondaryText
-            text={props.labelRight}
-            style={props.selected && { color: Colors.white }}
-          />
+          {props.labelRight && (
+            <SecondaryText
+              text={props.labelRight}
+              style={props.selected && { color: Colors.white }}
+            />
+          )}
         </View>
       </Gradient>
     </TouchableScale>
