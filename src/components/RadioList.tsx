@@ -59,7 +59,10 @@ function RadioButtonUnchecked(props: RadioButtonProps) {
       ]}
       onPress={props.onPress}
     >
-      <Image source={require("assets/icons/icon-radio-unchecked.png")} />
+      <Image
+        source={require("assets/icons/icon-radio-unchecked.png")}
+        style={{ width: 15, height: 15 }}
+      />
       <Text style={{ marginLeft: 8, fontSize: 24, color: "#296081" }}>
         {props.label}
       </Text>
@@ -80,7 +83,10 @@ function RadioButtonChecked(props: RadioButtonProps) {
       ]}
       onPress={props.onPress}
     >
-      <Image source={require("assets/icons/icon-radio-checked.png")} />
+      <Image
+        source={require("assets/icons/icon-radio-checked.png")}
+        style={{ width: 15, height: 15 }}
+      />
       <Text
         style={{
           marginLeft: 8,

@@ -33,7 +33,7 @@ export default function ButtonPrimary(props: ButtonProps) {
           backgroundColor: "transparent",
           alignItems: "center",
           flexDirection: "row",
-          elevation: 5
+          elevation: props.disabled ? 0 : 5
         }}
       >
         <>

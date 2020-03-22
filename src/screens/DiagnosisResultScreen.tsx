@@ -13,6 +13,7 @@ import {
 import { Fonts } from "services/Fonts";
 import t from "services/translate";
 import { isTestPositive } from "services/QuestionnaireService";
+import RiseAnimation from "components/animations/RiseAnimation";
 
 interface Styles {
   container: ViewStyle;
@@ -35,50 +36,54 @@ export default function DiagnosisResultScreen({ navigation }) {
   if (isTestPositive()) {
     return (
       <View style={styles.container}>
-        <Image
-          source={require("../../assets/doctor-not-tested.png")}
-          style={{ width: 175, height: 139 }}
-        />
-        <BaseText
-          text={t("test-result")}
-          style={{ marginTop: 33, fontFamily: Fonts.bold }}
-        />
-        <BaseText text={t("test-result-positive")} />
-        <ButtonPrimary
-          style={{ marginVertical: 30 }}
-          label={t("find-closest-test-centers")}
-          iconName={"arrowright"}
-          onPress={() => navigation.navigate("LoadingLocation")}
-        />
+        <RiseAnimation>
+          <Image
+            source={require("../../assets/doctor-not-tested.png")}
+            style={{ width: 175, height: 139 }}
+          />
+          <BaseText
+            text={t("test-result")}
+            style={{ marginTop: 33, fontFamily: Fonts.bold }}
+          />
+          <BaseText text={t("test-result-positive")} />
+          <ButtonPrimary
+            style={{ marginVertical: 30 }}
+            label={t("find-closest-test-centers")}
+            iconName={"arrowright"}
+            onPress={() => navigation.navigate("LoadingLocation")}
+          />
 
-        <Image source={require("../../assets/icons/warning-icon.png")} />
-        <SecondaryText text={"allow-location"} />
-        <SecondaryText text={"we-dont-store-dataas"} />
+          <Image source={require("../../assets/icons/warning-icon.png")} />
+          <SecondaryText text={"allow-location"} />
+          <SecondaryText text={"we-dont-store-dataas"} />
+        </RiseAnimation>
       </View>
     );
   }
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../../assets/doctor-test-ok.png")}
-        style={{ width: 175, height: 139 }}
-      />
-      <BaseText
-        text={t("test-The diagnosis result is")}
-        style={{ marginTop: 33, fontFamily: Fonts.bold }}
-      />
-      <BaseText text={t("You should not get a test. Stay home")} />
-      <ButtonPrimary
-        style={{ marginVertical: 30 }}
-        label={t("Find how you can help")}
-        iconName={"arrowright"}
-        onPress={() => {
-          Linking.openURL(
-            "https://www.bundesgesundheitsministerium.de/coronavirus.html"
-          );
-          setTimeout(() => navigation.navigate("LandingScreen"), 1000);
-        }}
-      />
+      <RiseAnimation>
+        <Image
+          source={require("../../assets/doctor-test-ok.png")}
+          style={{ width: 175, height: 139 }}
+        />
+        <BaseText
+          text={t("test-The diagnosis result is")}
+          style={{ marginTop: 33, fontFamily: Fonts.bold }}
+        />
+        <BaseText text={t("You should not get a test. Stay home")} />
+        <ButtonPrimary
+          style={{ marginVertical: 30 }}
+          label={t("Find how you can help")}
+          iconName={"arrowright"}
+          onPress={() => {
+            Linking.openURL(
+              "https://www.bundesgesundheitsministerium.de/coronavirus.html"
+            );
+            setTimeout(() => navigation.navigate("LandingScreen"), 1000);
+          }}
+        />
+      </RiseAnimation>
     </View>
   );
 }
