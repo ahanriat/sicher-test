@@ -23,14 +23,14 @@ export function CoughScreen({ navigation }) {
         }}
       >
         <H1
-          text={t("Do you have a persistent cough?")}
+          text={t("cough.title")}
           style={{ textAlign: "center", marginBottom: 40 }}
         />
 
         <RadioList
           options={[
-            { label: t("Yes"), key: "yes" },
-            { label: t("No"), key: "no" }
+            { label: t("global.yes"), key: "yes" },
+            { label: t("global.no"), key: "no" }
           ]}
           onSelect={key => {
             setIsValid(true);
@@ -48,7 +48,7 @@ export function CoughScreen({ navigation }) {
         <ButtonIcon iconName="arrowleft" onPress={navigation.goBack} />
         <ButtonPrimary
           disabled={!isValid}
-          label={t("Next question")}
+          label={t("global.next-question")}
           iconName="arrowright"
           onPress={() => navigation.navigate("DiagnosisResultScreen")}
         />

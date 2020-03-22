@@ -35,6 +35,8 @@ function App() {
           screenOptions={{ cardStyle: { backgroundColor: Colors.white } }}
         >
           <Stack.Screen name="LandingScreen" component={LandingScreen} />
+          <Stack.Screen name="Questionnaire" component={Questionnaire} />
+
           <Stack.Screen
             name="DiagnosisResultScreen"
             component={DiagnosisResultScreen}
@@ -52,8 +54,6 @@ function App() {
             name="BookingDetails"
             component={BookingDetailsScreen}
           />
-
-          <Stack.Screen name="Questionnaire" component={Questionnaire} />
         </Stack.Navigator>
       </NavigationContainer>
     </MaxWidth>

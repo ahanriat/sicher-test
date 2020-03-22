@@ -23,23 +23,18 @@ export function RiskContactScreen({ navigation }) {
         }}
       >
         <H1
-          text={t("Have you had close contact with a confirmed case?")}
+          text={t("risk-contact.title")}
           style={{ textAlign: "center", marginBottom: 40 }}
         />
         <BaseText
           style={{ textAlign: "center", marginBottom: 40 }}
-          text="Close contact with a confirmed case means:
-Face-to-face contact for longer than 15 minutes 
-Direct, physical contact (touching, shaking hands, kissing)
-Being within 2 meters of the person for more than 15 minutes.
-Contact with or exchange of body fluids
-Living in the same apartment"
+          text={t("risk-contact.disclaimer")}
         />
 
         <RadioList
           options={[
-            { label: t("Yes"), key: "yes" },
-            { label: t("No"), key: "no" }
+            { label: t("global.yes"), key: "yes" },
+            { label: t("global.no"), key: "no" }
           ]}
           onSelect={key => {
             setIsValid(true);
@@ -57,7 +52,7 @@ Living in the same apartment"
         <ButtonIcon iconName="arrowleft" onPress={navigation.goBack} />
         <ButtonPrimary
           disabled={!isValid}
-          label={t("Next question")}
+          label={t("global.next-question")}
           iconName="arrowright"
           onPress={() => navigation.navigate("FeverScreen")}
         />

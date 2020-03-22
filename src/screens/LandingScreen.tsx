@@ -33,17 +33,16 @@ export default function LandingScreen({ navigation }) {
           />
 
           <BaseText
-            text={t("Disclaimer").toUpperCase()}
+            text={t("landing.disclaimer").toUpperCase()}
             style={{ marginBottom: 40, fontWeight: "bold" }}
           />
           <SecondaryText
             style={{ textAlign: "center", maxWidth: 400 }}
-            text={t(`l Usage of this app does not substitute medical treatment by a physician or clinical diagnostics.
-The CovApp serves to improve the procedures at the Charité examination centre and other outpatient clinics in connection with the novel Coronavirus SARS-CoV-2. If you currently feel seriously ill, please immediately contact a physician.`)}
+            text={t("landing.disclaimer.message")}
           />
         </View>
         <ButtonPrimary
-          label={t("Take the test")}
+          label={t("landing.cta.take-the-test")}
           iconName={"arrowright"}
           onPress={() => navigation.navigate("Questionnaire")}
         />

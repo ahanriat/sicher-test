@@ -22,17 +22,17 @@ export function DiseaseScreen({ navigation }) {
         }}
       >
         <H1
-          text={t("Do you have any of the following chronic diseases?")}
+          text={t("disease.title")}
           style={{ textAlign: "center", marginBottom: 40 }}
         />
 
         <RadioList
           options={[
-            { label: "Lung condition", key: "lung_condition" },
-            { label: "Diabetes", key: "diabetes" },
-            { label: "Obesity", key: "obesity" },
-            { label: "No", key: "none" },
-            { label: "I don't know", key: "unknown" }
+            { label: t("disease.lung_condition"), key: "lung_condition" },
+            { label: t("disease.diabetes"), key: "diabetes" },
+            { label: t("disease.obesity"), key: "obesity" },
+            { label: t("global.no"), key: "none" },
+            { label: t("disease.unknown"), key: "unknown" }
           ]}
           onSelect={key => {
             setIsValid(true);
@@ -50,7 +50,7 @@ export function DiseaseScreen({ navigation }) {
         <ButtonIcon iconName="arrowleft" onPress={navigation.goBack} />
         <ButtonPrimary
           disabled={!isValid}
-          label={t("Next question")}
+          label={t("global.next-question")}
           iconName="arrowright"
           onPress={() => navigation.navigate("RiskCountryScreen")}
         />
