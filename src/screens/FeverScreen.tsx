@@ -23,14 +23,14 @@ export function FeverScreen({ navigation }) {
         }}
       >
         <H1
-          text={t("Have you had a fever (over 40 °C) in the past 24 hours?")}
+          text={t("fever.title")}
           style={{ textAlign: "center", marginBottom: 40 }}
         />
 
         <RadioList
           options={[
-            { label: t("Yes"), key: "yes" },
-            { label: t("No"), key: "no" }
+            { label: t("global.yes"), key: "yes" },
+            { label: t("global.no"), key: "no" }
           ]}
           onSelect={key => {
             setIsValid(true);
@@ -48,7 +48,7 @@ export function FeverScreen({ navigation }) {
         <ButtonIcon iconName="arrowleft" onPress={navigation.goBack} />
         <ButtonPrimary
           disabled={!isValid}
-          label={t("Next question")}
+          label={t("global.next-question")}
           iconName="arrowright"
           onPress={() => navigation.navigate("CoughScreen")}
         />

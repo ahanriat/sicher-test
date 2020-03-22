@@ -22,24 +22,22 @@ export function RiskCountryScreen({ navigation }) {
         }}
       >
         <H1
-          text={t(
-            "Have you been traveling to the risk areas in the past 4 weeks?"
-          )}
+          text={t("risk-country.title")}
           style={{ textAlign: "center", marginBottom: 40 }}
         />
 
         <RadioList
           options={[
-            { label: t("Germany"), key: "germany" },
-            { label: t("Italy"), key: "italy" },
-            { label: t("China"), key: "china" },
-            { label: t("South Korea"), key: "south_korea" },
-            { label: t("France"), key: "france" },
-            { label: t("Austria"), key: "austria" },
-            { label: t("Spain"), key: "spain" },
-            { label: t("USA"), key: "usa" },
+            { label: t("risk-country.germany"), key: "germany" },
+            { label: t("risk-country.italy"), key: "italy" },
+            { label: t("risk-country.china"), key: "china" },
+            { label: t("risk-country.south_korea"), key: "south_korea" },
+            { label: t("risk-country.france"), key: "france" },
+            { label: t("risk-country.austria"), key: "austria" },
+            { label: t("risk-country.spain"), key: "spain" },
+            { label: t("risk-country.usa"), key: "usa" },
             {
-              label: t("No"),
+              label: t("global.no"),
               key: "none"
             }
           ]}
@@ -59,7 +57,7 @@ export function RiskCountryScreen({ navigation }) {
         <ButtonIcon iconName="arrowleft" onPress={navigation.goBack} />
         <ButtonPrimary
           disabled={!isValid}
-          label={t("Next question")}
+          label={t("global.next-question")}
           iconName="arrowright"
           onPress={() => navigation.navigate("RiskContactScreen")}
         />

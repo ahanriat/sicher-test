@@ -14,16 +14,16 @@ export function AgeScreen({ navigation }) {
     <SafeAreaView style={{ flex: 1 }}>
       <ProgressBar progress={16} style={{ margin: 24 }} />
       <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
-        <H1 text={t("How old are you?")} style={{ marginBottom: 44 }} />
+        <H1 text={t("age.title")} style={{ marginBottom: 44 }} />
 
         <RadioList
           options={[
-            { label: "Under 40", key: "under_40" },
-            { label: "40-50", key: "40_50" },
-            { label: "51-60", key: "51-60" },
-            { label: "61-70", key: "61-70" },
-            { label: "71-80", key: "71-80" },
-            { label: "Over 80", key: "over_80" }
+            { label: t("age.under_40"), key: "under_40" },
+            { label: t("age.40_50"), key: "40_50" },
+            { label: t("age.51-60"), key: "51-60" },
+            { label: t("age.61-70"), key: "61-70" },
+            { label: t("age.71-80"), key: "71-80" },
+            { label: t("age.over_80"), key: "over_80" }
           ]}
           onSelect={key => {
             setIsValid(true);
@@ -41,7 +41,7 @@ export function AgeScreen({ navigation }) {
         <ButtonIcon iconName="arrowleft" onPress={navigation.goBack} />
         <ButtonPrimary
           disabled={!isValid}
-          label={t("Next question")}
+          label={t("global.next-question")}
           iconName="arrowright"
           onPress={() => navigation.navigate("DiseaseScreen")}
         />

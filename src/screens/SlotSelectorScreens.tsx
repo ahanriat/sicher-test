@@ -10,6 +10,7 @@ import {
   View,
   ViewStyle
 } from 'react-native';
+import t from "services/translate";
 
 interface Styles {
   container: ViewStyle;
@@ -52,12 +53,12 @@ export default function SlotSelectorScreen(props) {
                 source={require('../../assets/search-results-image.png')}
               />
               <SecondaryText
-                text={'search-results'}
+                text={t("search-results")}
                 style={{ marginTop: 24 }}
               />
               <BaseText
-                style={{ textAlign: 'center' }}
-                text={'recommended-slots'}
+                style={{ textAlign: "center" }}
+                text={t("recommend-slots")}
               />
             </View>
           );

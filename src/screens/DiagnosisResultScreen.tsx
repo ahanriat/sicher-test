@@ -43,10 +43,9 @@ export default function DiagnosisResultScreen({ navigation }) {
             style={{ width: 175, height: 139 }}
           />
           <BaseText
-            text={t("test-result")}
+            text={t("test-result-baseline")}
             style={{ marginTop: 33, fontFamily: Fonts.bold }}
           />
-          <BaseText text={t("test-result-positive")} />
           <ButtonPrimary
             style={{ marginVertical: 30 }}
             label={t("find-closest-test-centers")}
@@ -55,8 +54,8 @@ export default function DiagnosisResultScreen({ navigation }) {
           />
 
           <Image source={require("../../assets/icons/warning-icon.png")} />
-          <SecondaryText text={"allow-location"} />
-          <SecondaryText text={"we-dont-store-dataas"} />
+          <SecondaryText text={t("allow-location")} />
+          <SecondaryText text={t("we-dont-store-datas")} />
         </RiseAnimation>
       </View>
     );
@@ -69,13 +68,12 @@ export default function DiagnosisResultScreen({ navigation }) {
           style={{ width: 175, height: 139 }}
         />
         <BaseText
-          text={t("test-The diagnosis result is")}
+          text={t("test-result-baseline")}
           style={{ marginTop: 33, fontFamily: Fonts.bold }}
         />
-        <BaseText text={t("You should not get a test. Stay home")} />
         <ButtonPrimary
           style={{ marginVertical: 30 }}
-          label={t("Find how you can help")}
+          label={t("find-help")}
           iconName={"arrowright"}
           onPress={() => {
             Linking.openURL(

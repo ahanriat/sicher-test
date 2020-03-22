@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import SecondaryText from 'components/SecondaryText';
-import { Image, StyleSheet, View, Animated } from 'react-native';
-
+import React, { useEffect } from "react";
+import SecondaryText from "components/SecondaryText";
+import { Image, StyleSheet, View, Animated } from "react-native";
+import t from "services/translate";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center"
   }
-})
+});
 
 export default function LoadingLocationScreen(props) {
   const animatedValue = new Animated.Value(0);
@@ -25,12 +25,12 @@ export default function LoadingLocationScreen(props) {
         })
     ]).start()
     const timout = setTimeout(() => {
-      props.navigation.navigate('SlotSelector')
+      props.navigation.navigate("SlotSelector");
     }, 1000);
 
     return () => {
       clearTimeout(timout);
-    }
+    };
   }, []);
 
   return (
@@ -43,9 +43,12 @@ export default function LoadingLocationScreen(props) {
           })
         }]
       }}>
-        <Image source={require('../../assets/radar-search-image.png')}/>
+        <Image source={require("../../assets/radar-search-image.png")} />
       </Animated.View>
-      <SecondaryText text={'searching-for-centers-around-you'} style={{ marginTop: 27 }}/>
+      <SecondaryText
+        text={t("searching-for-centers-around-you")}
+        style={{ marginTop: 27 }}
+      />
     </View>
-  )
+  );
 }

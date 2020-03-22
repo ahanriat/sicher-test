@@ -6,6 +6,7 @@ import React from 'react';
 import { Image, StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { Colors } from 'services/Colors';
 import { Fonts } from 'services/Fonts';
+import t from "services/translate";
 import getCenter from 'services/TestCenterService';
 
 
@@ -16,7 +17,7 @@ interface Styles {
 const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
-    marginTop: 20,
+    marginTop: 20
   }
 });
 
@@ -31,8 +32,14 @@ export default function ConfirmBookingScreen(props) {
         <BaseText text={center.name} style={{ fontFamily: Fonts.bold, fontSize: 20, marginBottom: 10 }}/>
         <SecondaryText text={center.address} style={{ textAlign: 'center' }}/>
         <TouchableOpacity>
-          <BaseText text={'get-directions'}
-                    style={{ marginTop: 20, color: Colors.oceanBlue, textDecorationLine: 'underline' }}/>
+          <BaseText
+            text={t("booking-confirmation.get-direction")}
+            style={{
+              marginTop: 20,
+              color: Colors.oceanBlue,
+              textDecorationLine: "underline"
+            }}
+          />
         </TouchableOpacity>
       </View>
       <View style={{ paddingHorizontal: 50, marginTop: 80 }}>
@@ -41,19 +48,30 @@ export default function ConfirmBookingScreen(props) {
           label={availableSlot.dayOfWeek}
           labelRight={availableSlot.time}
           onPress={() => null}
-          selected={true}/>
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 16 }}>
+          selected={true}
+        />
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop: 16
+          }}
+        >
           <TouchableOpacity onPress={() => props.navigation.goBack()}>
-            <Image source={require('../../assets/icons/decline-booking.png')}/>
+            <Image source={require("../../assets/icons/decline-booking.png")} />
           </TouchableOpacity>
           <ButtonPrimary
-            iconName={'arrowright'}
-            label={'Confirm booking'}
-            onPress={() => props.navigation.navigate('BookingDetails', { availableSlot })}/>
-
+            iconName={"arrowright"}
+            label={t("booking-confirmation.confirm")}
+            onPress={() => props.navigation.navigate("BookingDetails")}
+          />
         </View>
       </View>
-      <SecondaryText style={{ textAlign: 'center', marginTop: 70 }} text={'confirmation-disclaimer'}/>
+      <SecondaryText
+        style={{ textAlign: "center", marginTop: 70 }}
+        text={t("booking-confirmation.disclaimer")}
+      />
     </View>
-  )
+  );
 }
