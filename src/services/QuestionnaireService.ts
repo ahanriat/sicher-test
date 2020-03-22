@@ -30,6 +30,6 @@ export function isTestPositive(): boolean {
   return (
     Object.keys(questionnaireAnswersRisk)
       .map(risk => questionnaireAnswersRisk[risk])
-      .filter(isRisk => !!isRisk).length >= 0
+      .filter(isRisk => !!isRisk).length >= 3
   );
 }
