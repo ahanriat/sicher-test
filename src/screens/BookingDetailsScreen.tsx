@@ -1,22 +1,22 @@
-import BaseText from "components/BaseText";
-import SecondaryText from "components/SecondaryText";
-import SlotSelector from "components/SlotSelector";
-import { Linking } from "expo";
 import React from "react";
 import {
+  ViewStyle,
+  Platform,
+  Linking,
+  View,
   Alert,
   Image,
-  Platform,
   ScrollView,
-  StyleSheet,
   TouchableOpacity,
-  View,
-  ViewStyle
+  StyleSheet
 } from "react-native";
-import { Colors } from "services/Colors";
-import { Fonts } from "services/Fonts";
-import t from "services/translate";
 import getCenter from "services/TestCenterService";
+import BaseText from "components/BaseText";
+import t from "services/translate";
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import { Fonts } from "services/Fonts";
+import SecondaryText from "components/SecondaryText";
+import SlotSelector from "components/SlotSelector";
 
 interface Styles {
   container: ViewStyle;
@@ -130,7 +130,10 @@ export default function BookingDetailsScreen(props) {
             justifyContent: "center"
           }}
         >
-          <Image source={require("../../assets/icons/icon-near-me.png")} />
+          <Image
+            source={require("../../assets/icons/icon-near-me.png")}
+            style={{ height: 18, width: 18 }}
+          />
           <BaseText
             text={t("booking-details.get-directions")}
             style={{
@@ -151,7 +154,10 @@ export default function BookingDetailsScreen(props) {
             marginLeft: 12
           }}
         >
-          <Image source={require("../../assets/icons/icon-calendar.png")} />
+          <Image
+            source={require("../../assets/icons/icon-calendar.png")}
+            style={{ height: 18, width: 16 }}
+          />
           <BaseText
             text={t("booking-details.add-to-calendar")}
             style={{
@@ -163,10 +169,13 @@ export default function BookingDetailsScreen(props) {
         </TouchableOpacity>
       </View>
       <View style={{ alignItems: "center", marginTop: 32 }}>
-        <Image source={require("../../assets/icons/faq.png")} />
+        <Image
+          source={require("../../assets/icons/faq.png")}
+          style={{ width: 29, height: 29 }}
+        />
         <BaseText
           text={t("booking-details.faq")}
-          style={{ color: "rgba(41, 96, 129, 0.5)" }}
+          style={{ color: "rgba(41, 96, 129, 0.5)", marginTop: 10 }}
         />
 
         <View
