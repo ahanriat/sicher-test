@@ -73,7 +73,9 @@ export default function DiagnosisResultScreen({ navigation }) {
         label={t("Find how you can help")}
         iconName={"arrowright"}
         onPress={() => {
-          Linking.openURL("https://www.infektionsschutz.de/");
+          Linking.openURL(
+            "https://www.bundesgesundheitsministerium.de/coronavirus.html"
+          );
           setTimeout(() => navigation.navigate("LandingScreen"), 1000);
         }}
       />
