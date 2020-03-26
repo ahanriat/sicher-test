@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Sicher Test",
-    "slug": "Danke",
+    "name": "Sicher test",
+    "slug": "sicher-test",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android", "web"],
@@ -19,7 +19,8 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "de.sichertest.mobile"
-    }
+      "bundleIdentifier": "com.sichertest.mobile"
+    },
+    "description": ""
   }
 }
